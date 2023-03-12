@@ -13,4 +13,12 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     {
         return Product::class;
     }
+
+   public function getRelatedProducts($product, $limit = 4)
+   {
+        return $this->model->where('product_category_id', $product->product_category_id)
+            ->where('tag', $product->tag)
+            ->limit(4)
+            ->get();
+   }
 }

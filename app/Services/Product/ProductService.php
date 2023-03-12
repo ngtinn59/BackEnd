@@ -27,4 +27,9 @@ class ProductService extends BaseService implements ProductServiceInterface
         $product->avgRating = $avgRating;
         return $product;
     }
+
+    public function getRelatedProducts($product, $limit = 4)
+    {
+       return $this->repository->getRelatedProducts($product, $limit);
+    }
 }
