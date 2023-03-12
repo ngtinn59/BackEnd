@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Service\Product;
+namespace App\Services\Product;
 
-use App\Service\ServiceInterface;
+use App\Services\ServiceInterface;
 
 interface ProductServiceInterface extends ServiceInterface
 {

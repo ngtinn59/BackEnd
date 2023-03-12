@@ -24,3 +24,4 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('shop/product/{id}',[App\Http\Controllers\Front\ShopController::class,'show']);
+Route::Post('shop/product/{id}',[App\Http\Controllers\Front\ShopController::class,'postComment']);

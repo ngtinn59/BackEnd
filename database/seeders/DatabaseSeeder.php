@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+         //\App\Models\User::factory(10)->create();
 
         DB::table('users')->insert([
             [
@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'CodeLean@gmail.com',
                 'password' => Hash::make('123456'),
                 'avatar' => null,
-                'level' => 0,
+                'level' => 1,
                 'description' => null,
             ],
             [
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'admin@gmail.com',
                 'password' => Hash::make('123456'),
                 'avatar' => null,
-                'level' => 0,
+                'level' => 1,
                 'description' => null,
             ],
             [
@@ -387,4 +387,3 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 }
-

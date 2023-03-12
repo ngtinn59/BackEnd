@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-abstract class BaseRepositories implements RepositoriesInterface
+abstract class BaseRepository implements RepositoryInterface
 {
     protected $model;
     public function __construct()
