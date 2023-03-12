@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.index');
-});
+
+
+//Route::get('/', function (){
+//    return \App\Models\Product::find(1)->ProductImages;
+//});
+//
+//Route::get('/', function (\App\Service\Product\ProductServiceInterface $productService){
+//   return $productService->find(1);
+//});
+
+Route::get('shop/product/{id}',[App\Http\Controllers\Front\ShopController::class,'show']);
