@@ -39,7 +39,7 @@
         Hero Slider
     --------------------*/
     $(".hero-items").owlCarousel({
-        loop: true,
+        loop: false,
         margin: 0,
         nav: true,
         items: 1,
@@ -56,7 +56,7 @@
         Product Slider
     --------------------*/
    $(".product-slider").owlCarousel({
-        loop: true,
+        loop: false,
         margin: 25,
         nav: true,
         items: 4,
@@ -119,7 +119,7 @@
         autoHeight: false,
         autoplay: true,
     });
-    
+
     /*------------------
         CountDown
     --------------------*/
@@ -140,7 +140,7 @@
     // For demo preview end
 
     console.log(timerdate);
-    
+
 
     // Use this for real timer date
     /* var timerdate = "2020/01/01"; */
@@ -149,9 +149,9 @@
         $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Days</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Hrs</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Mins</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Secs</p> </div>"));
     });
 
-        
+
     /*----------------------------------------------------
-     Language Flag js 
+     Language Flag js
     ----------------------------------------------------*/
     $(document).ready(function(e) {
     //no use
@@ -203,7 +203,7 @@
         $(".fw-size-choose .sc-item label, .pd-size-choose .sc-item label").removeClass('active');
         $(this).addClass('active');
     });
-    
+
     /*-------------------
 		Nice Select
     --------------------- */
@@ -224,7 +224,7 @@
 	});
 
     $('.product-pic-zoom').zoom();
-    
+
     /*-------------------
 		Quantity change
 	--------------------- */
@@ -246,5 +246,28 @@
 		}
 		$button.parent().find('input').val(newVal);
 	});
+
+
+    // Filter products homepage
+    const product_men = $(".product-slider.men");
+    const product_women = $(".product-slider.women")
+    $('.filter-control').on('click', '.item',function (){
+        const $item = $(this);
+
+        const fillter = $item.data('tag');
+        const category = $item.data('category');
+        $item.siblings().removeClass('active');
+        $item.addClass('active');
+
+        if(category === 'men'){
+            product_men.owlcarousel2_filter(fillter);
+        }
+
+        if(category === 'women'){
+            product_women.owlcarousel2_filter(fillter);
+        }
+
+    })
+
 
 })(jQuery);

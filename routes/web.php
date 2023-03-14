@@ -18,10 +18,15 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function (){
 //    return \App\Models\Product::find(1)->ProductImages;
 //});
-//
-//Route::get('/', function (\App\Service\Product\ProductServiceInterface $productService){
-//   return $productService->find(1);
-//});
 
-Route::get('shop/product/{id}',[App\Http\Controllers\Front\ShopController::class,'show']);
-Route::Post('shop/product/{id}',[App\Http\Controllers\Front\ShopController::class,'postComment']);
+Route::get('/',[\App\Http\Controllers\Front\HomeController::class, 'index']);
+
+Route::prefix('shop')->group(function (){
+
+    Route::get('product/{id}',[App\Http\Controllers\Front\ShopController::class,'show']);
+    Route::Post('product/{id}',[App\Http\Controllers\Front\ShopController::class,'postComment']);
+    Route::get('',[App\Http\Controllers\Front\ShopController::class,'index']);
+
+});
+
+

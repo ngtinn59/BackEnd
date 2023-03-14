@@ -21,4 +21,17 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
             ->limit(4)
             ->get();
    }
+
+   public function getFeatureProductsByCategory(int $categoryId){
+        return $this->model->where('featured', true)
+            ->where('product_category_id',$categoryId)
+            ->get();
+   }
+
+   public function getProductOnindex(){
+        $products = $this->model->paginate(3);
+        return $products;
+   }
+
+
 }

@@ -30,4 +30,10 @@ class ShopController extends Controller
        $this->productCommentService->create($request->all());
        return redirect()->back();
     }
+
+    public function index()
+    {
+        $products = $this->productService->getProductOnindex();
+        return view('front.shop.index',compact('products'));
+    }
 }

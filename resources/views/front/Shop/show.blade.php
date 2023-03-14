@@ -1,7 +1,7 @@
 @extends('front.layout.master')
 
 @section('Product', 'Home')
-
+@section('title', 'Product')
 @section('body')
     <!-- Product Section Begin-->
     <section class="product-shop spad page-details">
@@ -402,7 +402,7 @@
                                 <li class="w-icon active">
                                     <a href="" class="icon_bag_alt"></a>
                                 </li>
-                                <li class="quick-view"><a href="shop/product/{{$product->id}}" ">+ Quick View</a></li>
+                                <li class="quick-view"><a href="shop/product/{{$product->id}}" >+ Quick View</a></li>
                                 <li class="w-icon">
                                     <a href="" class="fa fa-random"></a>
                                 </li>
